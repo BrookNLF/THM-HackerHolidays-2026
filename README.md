@@ -11,6 +11,7 @@ This repo contains my notes and solutions for each daily challenge as I work thr
 Each day's challenge has its own folder with a writeup template:
 
 ```
+day-00/README.md
 day-01/README.md
 day-02/README.md
 ...
@@ -21,6 +22,7 @@ day-14/README.md
 
 | Day | Challenge Name | Topic | Status |
 |-----|----------------|-------|--------|
+| 00  | The Brochure   | OSINT | 🟩 |
 | 01  |                |       | ⬜ |
 | 02  |                |       | ⬜ |
 | 03  |                |       | ⬜ |
