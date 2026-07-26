@@ -34,19 +34,17 @@ I opened the account **veratheconcierge**, visible in the image above. This acco
 
 ### Step 4
 These three strings are Base64-encoded. Decoding each part and joining them together gives the flag:
-- `VEhNe1YzckBzX2FD` = `THM{V3r@s_aC`
-- `QzB1bnRfaDRzX2Iz` = `C0unt_h4s_b3`
-- `M25fZjB1bmQhfQ==` = `3n_f0und!}`
+- `VEhNe1YzckBzX2FD` = ![redacted](https://img.shields.io/badge/-REDACTED-000000)
+- `QzB1bnRfaDRzX2Iz` = ![redacted](https://img.shields.io/badge/-REDACTED-000000)
+- `M25fZjB1bmQhfQ==` = ![redacted](https://img.shields.io/badge/-REDACTED-000000)
 
 > **Note:** For decoding I used ([base64decode.org](https://www.base64decode.org/))
 
 And voilà, there you have it!
 
-## Flag
+## Flag 
+![redacted](https://img.shields.io/badge/-REDACTED-000000) - to avoid spoilers, correct flag will be posted after the event is concluded.
 
-```
-THM{V3r@s_aCCount_h4s_b33n_f0und!}
-```
 
 ## Lessons Learned
 
