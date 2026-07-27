@@ -23,7 +23,7 @@ day-14/README.md
 | Day | Challenge Name | Topic | Status |
 |-----|----------------|-------|--------|
 | 00  | The Brochure   | OSINT | 🟩 |
-| 01  |                |       | ⬜ |
+| 01  | The Concierge Knows Too Much | AI / Prompt Injection| 🟩 |
 | 02  |                |       | ⬜ |
 | 03  |                |       | ⬜ |
 | 04  |                |       | ⬜ |
