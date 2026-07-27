@@ -1,5 +1,5 @@
 # Day 01
-- **Challenge name:** [Arrival](https://tryhackme.com/room/hh-theconciergeknows-2d7eb4d9)
+- **Challenge name:** [The Concierge Knows Too Much](https://tryhackme.com/room/hh-theconciergeknows-2d7eb4d9)
 - **Category:** AI Prompt Attacks
 - **Difficulty:** Easy
 - **Date completed:** 27th of July 2026
