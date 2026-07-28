@@ -24,7 +24,7 @@ day-14/README.md
 |-----|----------------|-------|--------|
 | 00  | The Brochure   | OSINT | 🟩 |
 | 01  | The Concierge Knows Too Much | AI / Prompt Injection| 🟩 |
-| 02  |                |       | ⬜ |
+| 02  | Room 404                | Web / Directory Enumeration      | 🟩 |
 | 03  |                |       | ⬜ |
 | 04  |                |       | ⬜ |
 | 05  |                |       | ⬜ |
