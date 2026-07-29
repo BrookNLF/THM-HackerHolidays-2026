@@ -1,5 +1,5 @@
 # Day 02
-- **Challenge name:** [Concierge Briefing](https://tryhackme.com/room/hh-theconciergeknows-2d7eb4d9)
+- **Challenge name:** [Room 404]([https://tryhackme.com/room/hh-theconciergeknows-2d7eb4d9](https://tryhackme.com/room/hh-room404-804573bf))
 - **Category:** Web Exploitation / Source Code Exposure
 - **Difficulty:** Easy
 - **Date completed:** 28th of July 2026
