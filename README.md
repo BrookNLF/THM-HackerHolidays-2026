@@ -24,19 +24,19 @@ day-14/README.md
 |-----|----------------|-------|--------|
 | 00  | The Brochure   | OSINT | 🟩 |
 | 01  | The Concierge Knows Too Much | AI / Prompt Injection| 🟩 |
-| 02  | Room 404                | Web / Directory Enumeration      | 🟩 |
-| 03  |                |       | ⬜ |
-| 04  |                |       | ⬜ |
-| 05  |                |       | ⬜ |
-| 06  |                |       | ⬜ |
-| 07  |                |       | ⬜ |
-| 08  |                |       | ⬜ |
-| 09  |                |       | ⬜ |
-| 10  |                |       | ⬜ |
-| 11  |                |       | ⬜ |
-| 12  |                |       | ⬜ |
-| 13  |                |       | ⬜ |
-| 14  |                |       | ⬜ |
+| 02  | Room 404       | Web / Directory Enumeration | 🟩 |
+| 03  | Complimentary  | Cognito / IAM | 🟩 |
+| 04  | Packed Light   | Network Forensics / PCAP      | 🟩 |
+| 05  | Beach Bar      |       | ⬜ |
+| 06  | Overheard at Breakfast |       | ⬜ |
+| 07  | Do Not Disturb |       | ⬜ |
+| 08  | Towel on the Sunbed |       | ⬜ |
+| 09  | CryptoCabana |       | ⬜ |
+| 10  | The Hollow Shell |       | ⬜ |
+| 11  | Infinity Pool  |       | ⬜ |
+| 12  | After Hours    |       | ⬜ |
+| 13  | The Guestbook  |       | ⬜ |
+| 14  | Management Wants a Word |       | ⬜ |
 
 ## Disclaimer
 
