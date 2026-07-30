@@ -73,6 +73,8 @@ Instead of `getItem` (which fetches a single row by key), `scan` requests the *e
 ### Step 5 - Retrieving the flag
 The `scan()` call returned every guest record in the table, including profiles that didn't belong to me. Reading through the JSON output in the console, one of the other guest records contained the flag.
 
+And voilà, there you have it!
+
 ## Flag
 ![redacted](https://img.shields.io/badge/-REDACTED-000000) <!-- TODO: paste the actual flag once ready to publish -->
 
