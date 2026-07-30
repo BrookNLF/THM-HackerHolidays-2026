@@ -9,12 +9,13 @@ This challenge hands you a short pcap capture from the Byte Lotus guest network 
 
 ## Exploitation / Walkthrough
 ### Step 1
-Downloaded the pcap and opened it in Wireshark. Since @0xMia mentioned port 8080 specifically, I applied an `http` filter to narrow things down to just the relevant traffic.
+Using my personal PC, I downloaded the pcap and opened it in Wireshark. Since @0xMia mentioned port 8080 specifically, I applied an `http` filter to narrow things down to just the relevant traffic.
 
 ### Step 2
-While browsing the HTTP requests, I sorted by the **Length** column and looked for the biggest one — usually a good sign there's more going on than a normal request/response. That led me to a response with a `Content-type: text/x-python`, which turned out to be a `GET /temp/updates.py` request returning the full source code of a Python script being served from the same host:
+While browsing the HTTP requests, I sorted by the **Length** column and looked for the biggest one - usually a good sign there's more going on than a normal request/response. That led me to a response with a `Content-type: text/x-python`, which turned out to be a `GET /temp/updates.py` request returning the full source code of a Python script being served from the same host:
 
-[SCREENSHOT: Wireshark HTTP filter, sorted by Length, showing the text/x-python response]
+<img width="1405" height="525" alt="image" src="https://github.com/user-attachments/assets/43cb43c9-a4e4-4693-a933-de4f479b271b" />
+
 
 ```python
 import requests
@@ -45,28 +46,34 @@ def sendltr(character):
         pass
 ```
 
-This was basically a keylogger. Every keypress gets XOR'd with a key, base64-encoded, then sent out inside a `Cookie` header (`hotel_sess_state`) on a GET request to the C2 server's root path — which explains @0xMia's "pings every second" and the suspicious `ByteLotusClient/1.1` User-Agent she noticed.
+This was basically a keylogger. Every keypress gets XOR'd with a key, base64-encoded, then sent out inside a `Cookie` header (`hotel_sess_state`) on a GET request to the C2 server's root path - which explains @0xMia's "pings every second" and the suspicious `ByteLotusClient/1.1` User-Agent she noticed.
 
 ### Step 3
 With the mechanism known, the next job was pulling the actual beacon traffic (not the `/temp/updates.py` request, but the repeated `GET /` requests to `byte-lotus-hotel.thm:8080`) and extracting the `Cookie` value from each one, in order.
 
-I tried this two ways — a table comparison since both methods get you to the same place, just differently:
+I tried this two ways - a table comparison since both methods get you to the same place, just differently:
 
 | | Method 1: Custom Column (GUI) | Method 2: TShark (CLI) |
 |---|---|---|
 | **How** | Right-click the `Cookie` header field in the packet details pane → **Apply as Column**. Then filter on `http.request`, sort by time, and read the new column straight down the packet list. | Run a single tshark command that pulls the `Cookie` header from every matching packet directly to the terminal, already in order. |
-| **Speed** | A bit more manual, but quick enough once the column is set up. | Fastest option by far — one command, done. |
-| **My experience** | Worked without any issues. | I didn't have tshark set up on the PC I did this challenge on, and honestly, installing it was a pain. But after finishing the challenge, I went back and got it working just for this writeup, so you guys can see it in action! |
+| **Speed** | A bit more manual, but quick enough once the column is set up. | Fastest option by far - one command, done. |
 
-[SCREENSHOT: Wireshark packet list with custom Cookie column applied]
+---
+
+<img width="1047" height="598" alt="image" src="https://github.com/user-attachments/assets/dce9690d-15ca-4273-842e-92bc9fcdfa1c" />
+
+---
 
 TShark command used:
 ```bash
 tshark -r capture.pcap -Y "http.request" -T fields -e http.cookie
 ```
-Note: `capture.pcap` needs to be swapped out for the actual path to your pcapng file — wherever you saved/extracted it on your machine.
+Note: `capture.pcap` needs to be swapped out for the actual path to your pcapng file - wherever you saved/extracted it on your machine.
 
-[SCREENSHOT: CMD showing tshark command and output]
+---
+<img width="1191" height="537" alt="image" src="https://github.com/user-attachments/assets/dd86a2e1-6a28-45a3-8985-fbd6ea32c096" />
+
+---
 
 Once collected, I had a list of 30 base64 strings, one per keystroke:
 ```
@@ -105,19 +112,20 @@ NQ==
 ### Step 4
 To decode, I needed to reverse the script's process: base64-decode, then XOR with the same key. The question was which part of the key to actually use.
 
-Normally XOR encryption cycles through a whole key, letter by letter, as it encrypts a long message. But this script doesn't work on a full message — it calls `sendltr()` once per keypress, encrypting just one single character at a time. Since the "message" being encrypted is always only 1 character long, the XOR function never gets far enough to move past the first letter of the key. So in practice, every single keystroke ends up XOR'd with just the *first* letter of the key, over and over.
+Normally XOR encryption cycles through a whole key, letter by letter, as it encrypts a long message. But this script doesn't work on a full message - it calls `sendltr()` once per keypress, encrypting just one single character at a time. Since the "message" being encrypted is always only 1 character long, the XOR function never gets far enough to move past the first letter of the key. So in practice, every single keystroke ends up XOR'd with just the *first* letter of the key, over and over.
 
-The full key is `p1 + p2` = `H0t3lSt@ff0NlyK3epS3cr3t!`, so the first letter — and the one actually used — is `H`.
+The full key is `p1 + p2` = `H0t3lSt@ff0NlyK3epS3cr3t!` - as per Python's keylogger code above, so the first letter - and the one actually used - is `H`.
 
 ### Step 5
-Ran the 30 cookie values through CyberChef with the following recipe:
-1. **Fork** — split delimiter `\n`, merge delimiter `\n` (processes each line independently)
-2. **From Base64** — standard alphabet
-3. **XOR** — key `H`, key type Latin1/UTF8, standard scheme
+Ran the 30 cookie values through [CyberChef](https://gchq.github.io/CyberChef/) with the following recipe:
+1. **From Base64** - standard alphabet
+2. **XOR** - key `H`, key type Latin1/UTF8, standard scheme
 
-Because Fork keeps each line isolated, all 30 values decoded and XOR'd independently in one pass, then merged back with newlines — giving the full sequence of typed characters, in order, top to bottom.
+---
 
-[SCREENSHOT: CyberChef recipe and output]
+<img width="2050" height="772" alt="image" src="https://github.com/user-attachments/assets/fc1f47a6-b22f-4e6f-9f60-96fd1619ac55" />
+
+---
 
 ## Tools Used
 - Wireshark
@@ -128,8 +136,6 @@ Because Fork keeps each line isolated, all 30 values decoded and XOR'd independe
 ![redacted](https://img.shields.io/badge/-REDACTED-000000) - to avoid spoilers, correct flag will be posted after the event is concluded.
 
 ## Lessons Learned
-Malicious traffic doesn't have to look scary — it can just be a normal-looking `Cookie` header on a normal-looking GET request. The stuff that gave it away was the pattern, not the content: same host, same port, firing off every second like clockwork.
+Malicious traffic doesn't have to look scary - it can just be a normal-looking `Cookie` header on a normal-looking GET request. The stuff that gave it away was the pattern, not the content: same host, same port, firing off every second like clockwork.
 
-Also, if a server hands you source code, read it. It saved me from having to reverse-engineer the encryption blind — the script basically explained itself.
-
-Lastly, don't assume the "complicated-looking" part of a challenge is actually complicated. The XOR key looked like it should cycle through a whole string, but a quick look at how the function was actually being called showed it never got the chance to.
+Also, if a server hands you source code, read it. It saved me from having to reverse-engineer the encryption blind - the script basically explained itself.
