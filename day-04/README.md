@@ -1,4 +1,4 @@
-# Day 02
+# Day 04
 - **Challenge name:** [Packed Light](https://tryhackme.com/room/hh-packedlight-02e5330c)
 - **Category:** Network Forensics / Traffic Analysis
 - **Difficulty:** Easy
