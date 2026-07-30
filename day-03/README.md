@@ -1,4 +1,4 @@
-# Day 02
+# Day 03
 - **Challenge name:** [Complimentary](https://tryhackme.com/room/hh-complimentary-05e0b604)
 - **Category:** Cloud Security / AWS Misconfiguration
 - **Difficulty:** Easy/Medium
