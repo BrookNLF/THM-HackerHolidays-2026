@@ -26,8 +26,8 @@ day-14/README.md
 | 01  | The Concierge Knows Too Much | AI / Prompt Injection| 🟩 |
 | 02  | Room 404       | Web / Directory Enumeration | 🟩 |
 | 03  | Complimentary  | Cognito / IAM | 🟩 |
-| 04  | Packed Light   | Network Forensics / PCAP      | 🟩 |
-| 05  | Beach Bar      | Boot2root / Pentesting      | 🟩 |
+| 04  | Packed Light   | Network Forensics / PCAP | 🟩 |
+| 05  | Beach Bar      | Boot2root / Pentesting | 🟩 |
 | 06  | Overheard at Breakfast |       | ⬜ |
 | 07  | Do Not Disturb |       | ⬜ |
 | 08  | Towel on the Sunbed |       | ⬜ |
