@@ -28,8 +28,8 @@ day-14/README.md
 | 03  | Complimentary  | Cognito / IAM | 🟩 |
 | 04  | Packed Light   | Network Forensics / PCAP | 🟩 |
 | 05  | Beach Bar      | Boot2root / Pentesting | 🟩 |
-| 06  | Overheard at Breakfast |       | ⬜ |
-| 07  | Do Not Disturb |       | ⬜ |
+| 06  | Overheard at Breakfast | OSINT | 🟩 |
+| 07  | Do Not Disturb | Boot2root / Pentesting | 🟩 |
 | 08  | Towel on the Sunbed |       | ⬜ |
 | 09  | CryptoCabana |       | ⬜ |
 | 10  | The Hollow Shell |       | ⬜ |
