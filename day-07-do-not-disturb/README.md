@@ -1,5 +1,5 @@
 # Day 07
-- **Challenge name: ** Do Not Disturb [https://tryhackme.com/room/hh-donotdisturb-84a45644]
+- **Challenge name:** [Do Not Disturb](https://tryhackme.com/room/hh-donotdisturb-84a45644)
 - **Category:** Boot2Root / Pentesting
 - **Difficulty:** Medium
 - **Date completed:** 2nd of August 2026
