@@ -30,9 +30,9 @@ day-14/README.md
 | 05  | Beach Bar      | Boot2root / Pentesting | 🟩 |
 | 06  | Overheard at Breakfast | OSINT | 🟩 |
 | 07  | Do Not Disturb | Boot2root / Pentesting | 🟩 |
-| 08  | Towel on the Sunbed |       | ⬜ |
-| 09  | CryptoCabana |       | ⬜ |
-| 10  | The Hollow Shell |       | ⬜ |
+| 08  | Towel on the Sunbed |Web Exploitation / BurpSuite       | 🟩 |
+| 09  | CryptoCabana | Cloud / Azure CLI| 🟩 |
+| 10  | The Hollow Shell | Web / Zip Slip     | 🟩 |
 | 11  | Infinity Pool  |       | ⬜ |
 | 12  | After Hours    |       | ⬜ |
 | 13  | The Guestbook  |       | ⬜ |
