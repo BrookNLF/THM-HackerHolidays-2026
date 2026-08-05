@@ -1,6 +1,6 @@
 # Day 10 - The Hollow Shell
 
-- **Room:** [The Hollow Shell](https://tryhackme.com/room/hh-thehollowshell-ddb582ac)
+- **Room:** The Hollow Shell
 - **Category:** Web
 - **Difficulty:** Medium (90 points)
 - **Date completed:** 5th of August 2026
@@ -83,11 +83,17 @@ roomservice@tryhackme-2404:/var/www/conch$
 
 Full code execution as `roomservice`, confirming the chain: Zip Slip -> arbitrary file write into `hooks/` -> automatic hook execution -> RCE.
 
+### Step 6 - Finding the flag
+
+With shell access as `roomservice`, the flag was located directly in the `roomservice` working directory - no further privilege escalation was needed.
+
 And voila, there you have it!
 
 ## Flag
 
-![REDACTED](https://img.shields.io/badge/flag-REDACTED-black) - The correct flag will be posted after the event concludes, to avoid spoilers.
+![REDACTED](https://img.shields.io/badge/flag-REDACTED-black)
+
+The correct flag will be posted after the event concludes, to avoid spoilers.
 
 ## Lessons Learned
 
