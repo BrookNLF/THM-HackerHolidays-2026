@@ -1,7 +1,7 @@
 # Day 10 - The Hollow Shell
 
-- **Room:** The Hollow Shell
-- **Category:** Web
+- **Room:** [The Hollow Shell](https://tryhackme.com/room/hh-thehollowshell-ddb582ac)
+- **Category:** Web / Zip Slip
 - **Difficulty:** Medium (90 points)
 - **Date completed:** 5th of August 2026
 
