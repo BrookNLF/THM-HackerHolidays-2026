@@ -177,3 +177,4 @@ The correct flags will be posted after the event has concluded, to avoid spoiler
 - When a JS-heavy login fights curl, stop wrestling it and tunnel a browser in. It saves a lot of time.
 - Loopback-only services stop being safe the moment you have a foothold - pivot with chisel and reach them.
 - Match software versions to CVEs. FreePBX 16.0.45 pointed straight at CVE-2026-46376.
+- I hate boot2roots.
