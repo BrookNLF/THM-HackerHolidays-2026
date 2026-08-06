@@ -1,4 +1,4 @@
-# Day 11 - Infinity RPool
+# Day 11 - Infinity Pool
 
 - **Challenge:** [Infinity Pool](https://tryhackme.com/room/hh-infinitypool-5b3548af)
 - **Category:** Boot2Root (web exploitation -> pivoting -> privilege escalation)
