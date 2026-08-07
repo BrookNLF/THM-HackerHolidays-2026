@@ -33,7 +33,7 @@ day-14/README.md
 | 08  | Towel on the Sunbed |Web Exploitation / BurpSuite       | 🟩 |
 | 09  | CryptoCabana | Cloud / Azure CLI| 🟩 |
 | 10  | The Hollow Shell | Web / Zip Slip     | 🟩 |
-| 11  | Infinity Pool  |       | ⬜ |
+| 11  | Infinity Pool  | Boot2root | 🟩 |
 | 12  | After Hours    |       | ⬜ |
 | 13  | The Guestbook  |       | ⬜ |
 | 14  | Management Wants a Word |       | ⬜ |
