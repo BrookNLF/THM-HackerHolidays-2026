@@ -34,8 +34,8 @@ day-14/README.md
 | 09  | CryptoCabana | Cloud / Azure CLI| 🟩 |
 | 10  | The Hollow Shell | Web / Zip Slip     | 🟩 |
 | 11  | Infinity Pool  | Boot2root | 🟩 |
-| 12  | After Hours    |       | ⬜ |
-| 13  | The Guestbook  |       | ⬜ |
+| 12  | After Hours    | Forensics | 🟩 |
+| 13  | The Guestbook  |       | 🟩 |
 | 14  | Management Wants a Word |       | ⬜ |
 
 ## Disclaimer
